@@ -22,7 +22,7 @@ void afficherMenuClients() {
     cout << "4. Retour\n";
 }
 
-// Menu comptes
+// Menu Comptes
 void afficherMenuComptes() {
     cout << "\n--- MENU COMPTES ---\n";
     cout << "1. Ouvrir compte courant\n";
@@ -31,6 +31,17 @@ void afficherMenuComptes() {
     cout << "4. Lister comptes d'un client\n";
     cout << "5. Retour\n";
 }
+
+// Menu Operations
+void afficherMenuOperations() {
+    cout << "\n--- MENU OPERATIONS ---\n";
+    cout << "1. Depot\n";
+    cout << "2. Retrait\n";
+    cout << "3. Virement\n";
+    cout << "4. Appliquer interets (epargne)\n";
+    cout << "5. Retour\n";
+}
+
 
 
 int main(){
@@ -100,9 +111,41 @@ int main(){
     break;
 }
 
-            case 3:
-               cout << "Menu Operations (a venir)\n";
-               break;
+            case 3: {
+    int choixOp = 0;
+
+    while (true) {
+        afficherMenuOperations();
+        choixOp = InputUtils::lireInt("Votre choix : ");
+
+        if (choixOp == 5) {
+            break; // retour menu principal
+        }
+
+        try {
+            switch (choixOp) {
+                case 1:
+                    cout << "Depot (a implementer)\n";
+                    break;
+                case 2:
+                    cout << "Retrait (a implementer)\n";
+                    break;
+                case 3:
+                    cout << "Virement (a implementer)\n";
+                    break;
+                case 4:
+                    cout << "Appliquer interets (a implementer)\n";
+                    break;
+                default:
+                    cout << "Choix invalide.\n";
+            }
+        } catch (...) {
+            cout << "Erreur lors de l'operation.\n";
+        }
+    }
+    break;
+}
+
             case 4:
                cout << "Menu Affichages (a venir)\n";
                break;
