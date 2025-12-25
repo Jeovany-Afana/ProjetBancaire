@@ -3,7 +3,7 @@
 
 using namespace std;
 
-//Menu principal
+//Menu Principal
 void afficherMenuPrincipal(){
     cout << "\n==== MINI BANK ====\n";
     cout << "1. Clients\n";
@@ -13,7 +13,7 @@ void afficherMenuPrincipal(){
     cout << "5. Quitter\n";
 }
 
-//Menu clients
+//Menu Clients
 void afficherMenuClients() {
     cout << "\n--- MENU CLIENTS ---\n";
     cout << "1. Ajouter client\n";
@@ -21,6 +21,17 @@ void afficherMenuClients() {
     cout << "3. Chercher client (par id)\n";
     cout << "4. Retour\n";
 }
+
+// Menu comptes
+void afficherMenuComptes() {
+    cout << "\n--- MENU COMPTES ---\n";
+    cout << "1. Ouvrir compte courant\n";
+    cout << "2. Ouvrir compte epargne\n";
+    cout << "3. Lister comptes\n";
+    cout << "4. Lister comptes d'un client\n";
+    cout << "5. Retour\n";
+}
+
 
 int main(){
     int choix = 0;
@@ -58,9 +69,37 @@ int main(){
                 break;
             }
 
+            case 2: {
+    int choixCompte = 0;
+
+    while (true) {
+        afficherMenuComptes();
+        choixCompte = InputUtils::lireInt("Votre choix : ");
+
+        if (choixCompte == 5) {
+            break;
+        }
+
+        switch (choixCompte) {
+            case 1:
+                cout << "Ouvrir compte courant (a implementer)\n";
+                break;
             case 2:
-               cout << "Menu Comptes (a venir)\n";
-               break;
+                cout << "Ouvrir compte epargne (a implementer)\n";
+                break;
+            case 3:
+                cout << "Lister comptes (a implementer)\n";
+                break;
+            case 4:
+                cout << "Lister comptes d'un client (a implementer)\n";
+                break;
+            default:
+                cout << "Choix invalide.\n";
+        }
+    }
+    break;
+}
+
             case 3:
                cout << "Menu Operations (a venir)\n";
                break;
