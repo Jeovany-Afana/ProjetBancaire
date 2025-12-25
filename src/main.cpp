@@ -42,6 +42,13 @@ void afficherMenuOperations() {
     cout << "5. Retour\n";
 }
 
+// Menu Affichages
+void afficherMenuAffichages() {
+    cout << "\n--- MENU AFFICHAGES ---\n";
+    cout << "1. Details d'un compte\n";
+    cout << "2. Historique d'un compte\n";
+    cout << "3. Retour\n";
+}
 
 
 int main(){
@@ -146,9 +153,31 @@ int main(){
     break;
 }
 
-            case 4:
-               cout << "Menu Affichages (a venir)\n";
-               break;
+            case 4: {
+    int choixAff = 0;
+
+    while (true) {
+        afficherMenuAffichages();
+        choixAff = InputUtils::lireInt("Votre choix : ");
+
+        if (choixAff == 3) {
+            break; // retour menu principal
+        }
+
+        switch (choixAff) {
+            case 1:
+                cout << "Details d'un compte (a implementer)\n";
+                break;
+            case 2:
+                cout << "Historique d'un compte (a implementer)\n";
+                break;
+            default:
+                cout << "Choix invalide.\n";
+        }
+    }
+    break;
+}
+
             case 5:
                cout << "Au revoir.\n";
                return 0;
