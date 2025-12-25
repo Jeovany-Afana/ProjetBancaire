@@ -66,3 +66,14 @@ Cela empêche l’application de planter si l’utilisateur saisit du texte au l
 3. Naviguer dans les menus
 4. Tester des saisies invalides (lettres au lieu de chiffres)
 5. Vérifier que l’application ne plante jamais
+
+## Remarque importante
+
+Les messages "(à implémenter)" présents dans les menus sont volontaires.
+Ils indiquent les emplacements où les appels à la logique métier (classe Banque)
+seront ajoutés lors de l’intégration finale du projet.
+
+Le groupe 4 se limite volontairement à la gestion de l’interface console
+et de la sécurisation des saisies utilisateur, conformément à la répartition
+des rôles définie pour le projet.
+
