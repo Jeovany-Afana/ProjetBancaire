@@ -17,7 +17,7 @@ int InputUtils::lireInt() {
             return valeur;
         }
 
-        cout << "Entrée invalide. Veuillez saisir un entier : ";
+        cout << "Entree invalide. Veuillez saisir un entier : ";
     }
 }
 
@@ -39,7 +39,7 @@ double InputUtils::lireDouble() {
             return valeur;
         }
 
-        cout << "Entrée invalide. Veuillez saisir un nombre : ";
+        cout << "Entree invalide. Veuillez saisir un nombre : ";
     }
 }
 

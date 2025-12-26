@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// ===== MENUS =====
+// MENUS
 
 // Menu principal
 void afficherMenuPrincipal() {
@@ -17,7 +17,7 @@ void afficherMenuPrincipal() {
 
 // Menu Clients
 void afficherMenuClients() {
-    cout << "\n--- MENU CLIENTS ---\n";
+    cout << "\n___MENU CLIENTS___\n";
     cout << "1. Ajouter client\n";
     cout << "2. Lister clients\n";
     cout << "3. Chercher client (par id)\n";
@@ -26,7 +26,7 @@ void afficherMenuClients() {
 
 // Menu Comptes
 void afficherMenuComptes() {
-    cout << "\n--- MENU COMPTES ---\n";
+    cout << "\n___MENU COMPTES___\n";
     cout << "1. Ouvrir compte courant\n";
     cout << "2. Ouvrir compte epargne\n";
     cout << "3. Lister comptes\n";
@@ -36,7 +36,7 @@ void afficherMenuComptes() {
 
 // Menu Operations
 void afficherMenuOperations() {
-    cout << "\n--- MENU OPERATIONS ---\n";
+    cout << "\n___MENU OPERATIONS___\n";
     cout << "1. Depot\n";
     cout << "2. Retrait\n";
     cout << "3. Virement\n";
@@ -46,7 +46,7 @@ void afficherMenuOperations() {
 
 // Menu Affichages
 void afficherMenuAffichages() {
-    cout << "\n--- MENU AFFICHAGES ---\n";
+    cout << "\n___MENU AFFICHAGES___\n";
     cout << "1. Details d'un compte\n";
     cout << "2. Historique d'un compte\n";
     cout << "3. Retour\n";
@@ -61,7 +61,7 @@ int main() {
 
         switch (choix) {
 
-            // ===== CLIENTS =====
+            // CLIENTS
             case 1: {
                 int choixClient = 0;
 
@@ -88,7 +88,7 @@ int main() {
                 break;
             }
 
-            // ===== COMPTES =====
+            // COMPTES
             case 2: {
                 int choixCompte = 0;
 
@@ -118,7 +118,7 @@ int main() {
                 break;
             }
 
-            // ===== OPERATIONS =====
+            // OPERATIONS
             case 3: {
                 int choixOp = 0;
 
@@ -146,14 +146,14 @@ int main() {
                                 cout << "Choix invalide.\n";
                         }
                     } catch (...) {
-                        // TODO: remplacer par catch(const BankException& e)
+                        //remplacer par catch(const BankException& e)
                         cout << "Erreur lors de l'operation.\n";
                     }
                 }
                 break;
             }
 
-            // ===== AFFICHAGES =====
+            // AFFICHAGES
             case 4: {
                 int choixAff = 0;
 
@@ -177,7 +177,7 @@ int main() {
                 break;
             }
 
-            // ===== QUITTER =====
+            // QUITTER
             case 5:
                 cout << "Au revoir.\n";
                 return 0;
