@@ -1,45 +1,49 @@
-#include "InputUtils.h"
 #include <iostream>
-#include <limits>
+#include <sstream>
+#include "InputUtils.h"
 
 using namespace std;
 
-void InputUtils::nettoyerCin(){
-    cin.clear();
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-}
-
-int InputUtils::lireInt(const string& message){
+//Lecture sécurisée d'un entier
+int InputUtils::lireInt() {
+    string ligne;
     int valeur;
 
-    while (true){
-        cout << message;
-        cin >> valeur;
+    while (true) {
+        getline(cin, ligne);
+        stringstream ss(ligne);
 
-        if(!cin.fail()){
-            nettoyerCin();
+        if (ss >> valeur && ss.eof()) {
             return valeur;
         }
 
-        cout << "Entree invalide. Veuillez saisir un nombre entier.\n";
-        nettoyerCin();
+        cout << "Entrée invalide. Veuillez saisir un entier : ";
     }
 }
 
+int InputUtils::lireInt(const string& message) {
+    cout << message;
+    return lireInt();
+}
 
-double InputUtils::lireDouble(const string& message){
+//Lecture sécurisée d'un nombre réel
+double InputUtils::lireDouble() {
+    string ligne;
     double valeur;
 
-    while (true){
-        cout << message;
-        cin >> valeur;
+    while (true) {
+        getline(cin, ligne);
+        stringstream ss(ligne);
 
-        if(!cin.fail()){
-            nettoyerCin();
+        if (ss >> valeur && ss.eof()) {
             return valeur;
         }
 
-        cout << "Entree invalide. Veuillez saisir un nombre valide.\n";
-        nettoyerCin();
+        cout << "Entrée invalide. Veuillez saisir un nombre : ";
     }
+}
+
+double InputUtils::lireDouble(const string& message) {
+    cout << message;
+    return lireDouble();
 }

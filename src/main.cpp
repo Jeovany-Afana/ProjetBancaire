@@ -3,8 +3,10 @@
 
 using namespace std;
 
-//Menu Principal
-void afficherMenuPrincipal(){
+// ===== MENUS =====
+
+// Menu principal
+void afficherMenuPrincipal() {
     cout << "\n==== MINI BANK ====\n";
     cout << "1. Clients\n";
     cout << "2. Comptes\n";
@@ -13,7 +15,7 @@ void afficherMenuPrincipal(){
     cout << "5. Quitter\n";
 }
 
-//Menu Clients
+// Menu Clients
 void afficherMenuClients() {
     cout << "\n--- MENU CLIENTS ---\n";
     cout << "1. Ajouter client\n";
@@ -50,35 +52,34 @@ void afficherMenuAffichages() {
     cout << "3. Retour\n";
 }
 
-
-int main(){
+int main() {
     int choix = 0;
 
-    while (true){
+    while (true) {
         afficherMenuPrincipal();
         choix = InputUtils::lireInt("Votre choix : ");
 
-        switch (choix){
-            case 1:{
+        switch (choix) {
+
+            // ===== CLIENTS =====
+            case 1: {
                 int choixClient = 0;
 
                 while (true) {
                     afficherMenuClients();
                     choixClient = InputUtils::lireInt("Votre choix : ");
 
-                    if (choixClient == 4) {
-                        break;
-                    }
+                    if (choixClient == 4) break;
 
                     switch (choixClient) {
                         case 1:
-                            cout << "Ajouter client (à implémenter)\n";
+                            cout << "Ajouter client (a implementer)\n";
                             break;
                         case 2:
-                            cout << "Lister clients (à implémenter)\n";
+                            cout << "Lister clients (a implementer)\n";
                             break;
                         case 3:
-                            cout << "Chercher client (à implémenter)\n";
+                            cout << "Chercher client (a implementer)\n";
                             break;
                         default:
                             cout << "Choix invalide.\n";
@@ -87,102 +88,102 @@ int main(){
                 break;
             }
 
+            // ===== COMPTES =====
             case 2: {
-    int choixCompte = 0;
+                int choixCompte = 0;
 
-    while (true) {
-        afficherMenuComptes();
-        choixCompte = InputUtils::lireInt("Votre choix : ");
+                while (true) {
+                    afficherMenuComptes();
+                    choixCompte = InputUtils::lireInt("Votre choix : ");
 
-        if (choixCompte == 5) {
-            break;
-        }
+                    if (choixCompte == 5) break;
 
-        switch (choixCompte) {
-            case 1:
-                cout << "Ouvrir compte courant (a implementer)\n";
+                    switch (choixCompte) {
+                        case 1:
+                            cout << "Ouvrir compte courant (a implementer)\n";
+                            break;
+                        case 2:
+                            cout << "Ouvrir compte epargne (a implementer)\n";
+                            break;
+                        case 3:
+                            cout << "Lister comptes (a implementer)\n";
+                            break;
+                        case 4:
+                            cout << "Lister comptes d'un client (a implementer)\n";
+                            break;
+                        default:
+                            cout << "Choix invalide.\n";
+                    }
+                }
                 break;
-            case 2:
-                cout << "Ouvrir compte epargne (a implementer)\n";
-                break;
-            case 3:
-                cout << "Lister comptes (a implementer)\n";
-                break;
-            case 4:
-                cout << "Lister comptes d'un client (a implementer)\n";
-                break;
-            default:
-                cout << "Choix invalide.\n";
-        }
-    }
-    break;
-}
-
-            case 3: {
-    int choixOp = 0;
-
-    while (true) {
-        afficherMenuOperations();
-        choixOp = InputUtils::lireInt("Votre choix : ");
-
-        if (choixOp == 5) {
-            break; // retour menu principal
-        }
-
-        try {
-            switch (choixOp) {
-                case 1:
-                    cout << "Depot (a implementer)\n";
-                    break;
-                case 2:
-                    cout << "Retrait (a implementer)\n";
-                    break;
-                case 3:
-                    cout << "Virement (a implementer)\n";
-                    break;
-                case 4:
-                    cout << "Appliquer interets (a implementer)\n";
-                    break;
-                default:
-                    cout << "Choix invalide.\n";
             }
-        } catch (...) {
-            cout << "Erreur lors de l'operation.\n";
-        }
-    }
-    break;
-}
 
+            // ===== OPERATIONS =====
+            case 3: {
+                int choixOp = 0;
+
+                while (true) {
+                    afficherMenuOperations();
+                    choixOp = InputUtils::lireInt("Votre choix : ");
+
+                    if (choixOp == 5) break;
+
+                    try {
+                        switch (choixOp) {
+                            case 1:
+                                cout << "Depot (a implementer)\n";
+                                break;
+                            case 2:
+                                cout << "Retrait (a implementer)\n";
+                                break;
+                            case 3:
+                                cout << "Virement (a implementer)\n";
+                                break;
+                            case 4:
+                                cout << "Appliquer interets (a implementer)\n";
+                                break;
+                            default:
+                                cout << "Choix invalide.\n";
+                        }
+                    } catch (...) {
+                        // TODO: remplacer par catch(const BankException& e)
+                        cout << "Erreur lors de l'operation.\n";
+                    }
+                }
+                break;
+            }
+
+            // ===== AFFICHAGES =====
             case 4: {
-    int choixAff = 0;
+                int choixAff = 0;
 
-    while (true) {
-        afficherMenuAffichages();
-        choixAff = InputUtils::lireInt("Votre choix : ");
+                while (true) {
+                    afficherMenuAffichages();
+                    choixAff = InputUtils::lireInt("Votre choix : ");
 
-        if (choixAff == 3) {
-            break; // retour menu principal
-        }
+                    if (choixAff == 3) break;
 
-        switch (choixAff) {
-            case 1:
-                cout << "Details d'un compte (a implementer)\n";
+                    switch (choixAff) {
+                        case 1:
+                            cout << "Details d'un compte (a implementer)\n";
+                            break;
+                        case 2:
+                            cout << "Historique d'un compte (a implementer)\n";
+                            break;
+                        default:
+                            cout << "Choix invalide.\n";
+                    }
+                }
                 break;
-            case 2:
-                cout << "Historique d'un compte (a implementer)\n";
-                break;
+            }
+
+            // ===== QUITTER =====
+            case 5:
+                cout << "Au revoir.\n";
+                return 0;
+
             default:
                 cout << "Choix invalide.\n";
-        }
-    }
-    break;
-}
-
-            case 5:
-               cout << "Au revoir.\n";
-               return 0;
-            default:
-            cout << "Choix invalide.\n";
         }
     }
 }
